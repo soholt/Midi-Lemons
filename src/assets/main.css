@@ -1,0 +1,463 @@
+@import './base.css';
+/*
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+*/
+/* ----------------------------------------------------------------------------- */
+
+/*
+datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  writing-mode: vertical-lr;
+
+}
+*/
+
+.vertical {
+  appearance: slider-vertical;
+  /* .vertical {*.
+    /*
+    writing-mode: bt-lr;
+    width: 10px;
+    height: 275px;
+    padding: 0 5px;
+    */
+  width: 30px;
+  height: 127px;
+}
+/*
+input[type='range'][orient='vertical'] {
+  appearance: slider-vertical;
+
+    writing-mode: bt-lr;
+    width: 10px;
+    height: 275px;
+    padding: 0 5px;
+
+    width: 30px;
+    height: 127px;
+  }
+  input[type='range'][orient='horizontal'] {
+
+      writing-mode: bt-lr;
+      appearance: slider-vertical;
+      width: 10px;
+      height: 275px;
+      padding: 0 5px;
+
+      width: 127px;
+      height: 30px;
+    }
+  */
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  /*-webkit-appearance: none;*/ /* Override default CSS styles */
+  /*appearance: none;*/
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  /* background: #d3d3d3; Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 10px; /* Slider handle height */
+  background: #04aa6d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  /* border-radius: 50%; */
+  /* background: url('contrasticon.png'); */
+}
+
+.slider::-moz-range-thumb {
+  width: 24px; /* Set a specific slider handle width */
+  height: 10px; /* Slider handle height */
+  background: #04aa6d; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  /* border-radius: 50%; */
+  /* background: url('contrasticon.png'); */
+}
+
+/* ----------------------------------------------------------------------------- */
+header {
+  padding: 8px 4px;
+}
+body {
+  font-size: medium;
+}
+main {
+  padding: 8px 4px;
+}
+nav {
+  padding: 8px 4px;
+}
+
+/* https://www.w3schools.com/colors/colors_names.asp */
+:root {
+  --red: red;
+  --red-bg: rgba(255, 0, 0, 0.200);
+  --red-ol: rgba(255, 0, 0, 0.256);
+  --red-on: red;
+  --red-off: red;
+  --red-txt: red;
+
+  --green: green;
+  --green-bg: rgba(0, 128, 0, 0.256);
+  --green-ol: rgba(0, 128, 0, 0.256);
+  --green-on: green;
+  --green-off: green;
+  --green-txt: black;
+
+  --blue: blue;
+  --blue-bg: rgba(0, 0, 255, 0.256);
+  --blue-ol: rgba(0, 0, 255, 0.256);
+  --blue-on: blue;
+  --blue-off: blue;
+  --blue-txt: blue;
+
+  --lemon: yellow;
+  --lemon-bg: rgba(255, 255, 0, 0.256);
+  --orange-ol: rgba(255, 255, 0, 0.768);
+  --lemon-on: yellow;
+  --lemon-off: yellow;
+  --lemon-txt: yellow;
+
+  --orange: orange;
+  --orange-bg: rgba(255, 166, 0, 0.256);
+  --orange-ol: rgba(255, 166, 0, 0.768);
+  --orange-on: orange;
+  --orange-off: orange;
+  --orange-txt: orange;
+
+  --sky: skyblue;
+  --sky-bg: rgba(135, 207, 235, 0.256);
+  --sky-ol: rgba(135, 207, 235, 0.768);
+  --sky-on: skyblue;
+  --sky-off: skyblue;
+  --sky-txt: skyblue;
+
+  --purple: purple;
+  --purple-bg: rgba(128, 0, 128, 0.256);
+  --purple-ol: rgba(128, 0, 128, 0.768);
+  --purple-on: purple;
+  --purple-off: purple;
+  --purple-txt: purple;
+
+  --silver: silver;
+  --silver-bg: rgba(192, 192, 192, 0.256);
+  --silver-ol: rgba(192, 192, 192, 0.768);
+  --silver-on: silver;
+  --silver-off: silver;
+  --silver-txt: silver;
+
+  --grey: grey;
+  --grey-bg: rgba(128, 128, 128, 0.256);
+  --grey-ol: rgba(128, 128, 128, 0.768);
+  --grey-on: grey;
+  --grey-off: grey;
+  --grey-txt: grey;
+
+  --lime: lime;
+  --lime-bg: rgba(0, 255, 0, 0.256);
+  --lime-ol: rgba(0, 255, 0, 0.768);
+  --lime-on: lime;
+  --lime-off: lime;
+  --lime-txt: lime;
+
+  --lime: tomato;
+  --lime: sky;
+  --navy: navy;
+  --white: white;
+}
+a {
+  color: var(--sky-off);
+}
+/*
+.router-link-active {
+  color: rgb(38, 255, 0);
+  text-decoration: none;
+  background-color: rgba(27, 233, 27, 0.341);
+  border: 1px solid rgb(55, 255, 0);
+  outline: 3px solid rgba(22, 218, 15, 0.7);
+}
+*/
+select option {
+  font-size: medium;
+  background: rgba(0, 0, 0, 0.8);
+  color: silver;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.btn, select{
+
+  font-size: medium;
+  /*
+        border: 1px solid rgb(0, 174, 67);
+        color: rgb(0, 255, 98);
+        */
+  background-color: rgba(0, 0, 0, 0);
+
+  border: 1px solid var(--silver-off);
+  color: var(--silver-off);
+
+  transition-duration: 0.1s;
+  border-radius: 4px;
+  padding: 8px 16px;
+
+  /*height: 150px;*/
+  margin: 2px;
+  /*margin-top:8px;
+        margin-bottom: 8px;
+        margin-right: 1px;
+        margin-left: 1px;*/
+
+  text-decoration: none;
+  /*
+        outline: thick ridge pink;
+        outline: 5px solid lemon;
+        outline-width:4px;
+        outline-offset:4px;
+        outline-style:solid;
+        outline-color:green;
+    
+        background-color: black;
+        border: none;
+        outline: none;
+        box-shadow: 0px 0px 1px 1px rgba(21, 190, 15, 0.567);
+        */
+  cursor: pointer;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.btn30 {
+  width: 30px;
+}
+.btn40 {
+  width: 40px;
+}
+.mix-btn {
+  width: 50px;
+}
+.mix-tbl {
+  /*border: 3px solid purple;*/
+  padding: 0px;
+}
+.btn.on, .btn:active, .btn:hover, .btn.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--silver-txt);
+  outline: 3px solid var(--silver-ol);
+  background-color: var(--silver-bg);
+}
+.btn.red.on, .btn.red:active, .btn.red:hover, .btn.red.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--red-txt);
+  /*font-weight: bold;*/
+  outline: 3px solid var(--red-ol);
+  background-color: var(--red-bg);
+}
+.btn.green.on, .btn.green:active, .btn.green:hover, .btn.green.on, .btn.green.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--green-txt);
+  outline: 3px solid var(--green-ol);
+  background-color: var(--green-bg);
+}
+.btn.blue.on, .btn.blue:active, .btn.blue:hover, .btn.blue.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--blue-txt);
+  outline: 3px solid var(--blue-ol);
+  background-color: var(--blue-bg);
+}
+.btn.lemon.on, .btn.lemon:active, .btn.lemon:hover, .btn.lemon.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--lemon-txt);
+  outline: 3px solid var(--lemon-ol);
+  background-color: var(--lemon-bg);
+}
+.btn.orange.on, .btn.orange:active, .btn.orange:hover, .btn.orange.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--orange-txt);
+  outline: 3px solid var(--orange-ol);
+  background-color: var(--orange-bg);
+}
+.btn.sky.on, .btn.sky:active, .btn.sky:hover, .btn.sky.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--sky-txt);
+  outline: 3px solid var(--sky-ol);
+  background-color: var(--sky-bg);
+}
+.btn.purple.on, .btn.purple:active, .btn.purple:hover, .btn.purple.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--purple-txt);
+  outline: 3px solid var(--purple-ol);
+  background-color: var(--purple-bg);
+}
+.btn.lime.on, .btn.lime:active, .btn.lime:hover, .btn.lime.router-link-active {
+  /*box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);*/
+  color: var(--lime-txt);
+  outline: 3px solid var(--lime-ol);
+  background-color: var(--lime-bg);
+}
+
+.red {
+  border: 1px solid var(--red-off);
+  color: var(--red-off);
+}
+.green {
+  border: 1px solid var(--green-off);
+  color: var(--green-off);
+}
+.blue {
+  border: 1px solid var(--blue-off);
+  color: var(--blue-off);
+}
+.lemon {
+  border: 1px solid var(--lemon-off);
+  color: var(--lemon-off);
+}
+.orange {
+  border: 1px solid var(--orange-off);
+  color: var(--orange-off);
+}
+.sky {
+  border: 1px solid var(--sky-off);
+  color: var(--sky-off);
+}
+.purple {
+  border: 1px solid var(--purple-off);
+  color: var(--purple-off);
+}
+.lime {
+  border: 1px solid var(--lime-off);
+  color: var(--lime-off);
+}
+/*
+  button {
+    border: 1px solid rgb(0, 174, 67);
+    color: rgb(0, 255, 98);
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  button:active {
+    color: rgb(0, 255, 98);
+    background-color: rgba(27, 233, 27, 0.486);
+  }
+  button:hover {
+    color: rgb(0, 255, 98);
+    background-color: rgba(27, 233, 27, 0.564);
+  }
+  */
+/*
+.btn a {
+    text-decoration:none;
+ }
+
+ .btn a:link {
+  text-decoration: none;
+}
+
+.btn a:visited {
+  text-decoration: none;
+}
+
+.btn a:hover {
+  text-decoration: none;
+}
+*/
+/*
+.btn a:active {
+  text-decoration: none;
+  background-color: #6bb2ff;
+}*/
+/*
+  
+  .btn-red {
+    border: 1px solid rgb(190, 0, 0);
+    color: rgb(201, 10, 10);
+  }
+  .btn-red:hover {
+    outline: 3px solid rgba(255, 50, 50, 0.5);
+  }
+  
+  .btn-lemon {
+    border: 1px solid rgb(214, 182, 0);
+    color: rgb(214, 182, 0);
+  }
+  .btn-lemon:hover {
+    outline: 3px solid rgba(247, 255, 26, 0.5);
+  }
+*/
+
+/*
+  .green {
+    color: rgb(53, 227, 53);
+    border: 2px solid #04aa6d;
+  }
+  */
+/*
+  .fix {
+    width: 48px;
+  }
+  /*
+  .button1 {
+    transition-duration: 0.1s;
+    border-radius: 8px;
+    background-color: black;
+    width: 60px;
+    height: 38px;
+  }
+  .button1:hover {
+    box-shadow: -1px -1px 2px 2px rgba(118, 255, 114, 0.8);
+  }
+  
+  */
