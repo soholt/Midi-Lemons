@@ -5,7 +5,7 @@
 ## in Preview..
 #### Many things to be decided and many things will change..
 
-## Play: try it live @ https://soho.lt/midi
+## Play: try it live @tmp https://midi.soho.lt/ (does not load nav on mobile)
 
 ### Available
 * midi.Tx() - send MIDI msg, will not change
